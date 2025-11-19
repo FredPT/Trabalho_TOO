@@ -1,4 +1,4 @@
-#  Sistema de Gerenciamento de Salão de Beleza  
+#  Sistema para Gerenciamento de Salão de Beleza  
 **Tecnologia Orientada a Objetos — Avaliação Prática Final**
 
 ---
@@ -20,19 +20,18 @@ O sistema foi implementado em Python, aplicando todos os pilares da POO e dois p
 
 ##  Objetivo do Projeto
 
-O objetivo é construir uma aplicação modular, extensível e coerente com os princípios da Programação Orientada a Objetos. O sistema demonstra:
+O objetivo é construir uma aplicação modular, extensível e coerente com os princípios da POO. O sistema demonstra:
 
 - Aplicação dos pilares da POO  
 - Uso prático de padrões de projeto  
-- Modelagem UML completa  
-- Estrutura clara e apropriada para evolução  
+- Modelagem UML  
+- Estrutura clara e apropriada
 
 ---
 
 #  Diagrama de Classes UML
 
 ![Diagrama](Diagrama_Salão.png)
-
 
 ---
 
@@ -76,8 +75,8 @@ Representa um cliente do salão.
 - listarHistorico()  
 
 ### **Pilares da POO**
-- **Encapsulamento:** controla o histórico apenas por métodos próprios.  
 - **Abstração:** modela um cliente do mundo real.  
+- **Encapsulamento:** controla o histórico apenas por métodos próprios.  
 
 ---
 
@@ -95,8 +94,8 @@ Representa profissionais do salão.
 - podeRealizar()  
 
 ### **Pilares da POO**
-- **Encapsulamento:** gerencia serviços internamente.  
 - **Abstração:** representa um profissional real.  
+- **Encapsulamento:** gerencia serviços internamente.  
 
 ---
 
@@ -122,8 +121,7 @@ Responsável por criar serviços.
 - criarServico()
 
 ### **Pilares da POO**
-- **Abstração:** isola a criação dos serviços.  
-- **Polimorfismo:** pode gerar serviços diferentes futuramente.  
+- **Abstração:** isola a criação dos serviços.
 
 ---
 
@@ -142,8 +140,8 @@ Conecta cliente, profissional e serviço.
 - calcularValor()  
 
 ### **Pilares da POO**
-- **Encapsulamento:** controla o valor calculado internamente.  
 - **Abstração:** representa um agendamento real.  
+- **Encapsulamento:** controla o valor calculado internamente.  
 
 ---
 
@@ -176,8 +174,7 @@ O padrão Factory centraliza a criação de objetos Service, permitindo:
 
 - Padronização  
 - Manutenção facilitada  
-- Extensibilidade  
-- Redução de acoplamento  
+- Extensibilidade
 
 ---
 
