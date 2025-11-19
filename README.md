@@ -1,11 +1,11 @@
-# 💈 Sistema de Gerenciamento de Salão de Beleza  
+#  Sistema de Gerenciamento de Salão de Beleza  
 **Tecnologia Orientada a Objetos — Avaliação Prática Final**
 
 ---
 
-## 📘 Descrição do Tema
+##  Descrição do Tema
 
-Este projeto consiste no desenvolvimento de um sistema orientado a objetos para gerenciamento de um **salão de beleza**, permitindo gerenciar:
+Este projeto consiste no desenvolvimento de um sistema orientado a objetos para gerenciamento de um salão de beleza, permitindo gerenciar:
 
 - Clientes  
 - Profissionais  
@@ -18,7 +18,7 @@ O sistema foi implementado em Python, aplicando todos os pilares da POO e dois p
 
 ---
 
-## 🎯 Objetivo do Projeto
+##  Objetivo do Projeto
 
 O objetivo é construir uma aplicação modular, extensível e coerente com os princípios da Programação Orientada a Objetos. O sistema demonstra:
 
@@ -29,20 +29,20 @@ O objetivo é construir uma aplicação modular, extensível e coerente com os p
 
 ---
 
-# 🧩 Diagrama de Classes UML
+#  Diagrama de Classes UML
 
 ![Diagrama](Diagrama_Salão.png)
 
 
 ---
 
-# 🏛️ Descrição das Classes e Pilares da POO
+#  Descrição das Classes e Pilares da POO
 
 A seguir estão as classes do sistema e os pilares aplicados em cada uma.
 
 ---
 
-## 📍 Salao
+##  Salao
 
 Gerencia todo o sistema.
 
@@ -62,7 +62,7 @@ Gerencia todo o sistema.
 
 ---
 
-## 📍 Cliente
+##  Cliente
 
 Representa um cliente do salão.
 
@@ -81,7 +81,7 @@ Representa um cliente do salão.
 
 ---
 
-## 📍 Profissional
+##  Profissional
 
 Representa profissionais do salão.
 
@@ -100,7 +100,7 @@ Representa profissionais do salão.
 
 ---
 
-## 📍 Service
+##  Service
 
 Representa um serviço do salão.
 
@@ -114,7 +114,7 @@ Representa um serviço do salão.
 
 ---
 
-## 📍 ServiceFactory (Factory Pattern)
+##  ServiceFactory (Factory Pattern)
 
 Responsável por criar serviços.
 
@@ -127,7 +127,7 @@ Responsável por criar serviços.
 
 ---
 
-## 📍 Agendamento
+##  Agendamento
 
 Conecta cliente, profissional e serviço.
 
@@ -147,7 +147,7 @@ Conecta cliente, profissional e serviço.
 
 ---
 
-## 📍 PriceStrategy (Strategy Pattern)
+##  PriceStrategy (Strategy Pattern)
 
 Define a interface para cálculo de preços.
 
@@ -166,11 +166,11 @@ Define a interface para cálculo de preços.
 
 ---
 
-# 🧠 Padrões de Projeto Aplicados
+#  Padrões de Projeto Aplicados
 
 ---
 
-## 🏭 Factory — *ServiceFactory*
+##  Factory — *ServiceFactory*
 
 O padrão Factory centraliza a criação de objetos Service, permitindo:
 
@@ -181,7 +181,7 @@ O padrão Factory centraliza a criação de objetos Service, permitindo:
 
 ---
 
-## 🎚️ Strategy — *PriceStrategy*
+##  Strategy — *PriceStrategy*
 
 O padrão Strategy permite alternar dinamicamente entre diferentes formas de cálculo de preço.
 
