@@ -166,8 +166,6 @@ Define a interface para cálculo de preços.
 
 #  Padrões de Projeto Aplicados
 
----
-
 ##  Factory — *ServiceFactory*
 
 O padrão Factory centraliza a criação de objetos Service, permitindo:
@@ -176,7 +174,6 @@ O padrão Factory centraliza a criação de objetos Service, permitindo:
 - Manutenção facilitada  
 - Extensibilidade
 
----
 
 ##  Strategy — *PriceStrategy*
 
@@ -193,5 +190,3 @@ O padrão Strategy permite alternar dinamicamente entre diferentes formas de cá
 - Evita if/else extensos  
 - Facilita adicionar novas regras  
 - Mantém o código limpo e modular  
-
----
