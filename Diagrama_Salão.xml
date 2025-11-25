@@ -1,137 +1,174 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 OPR/123.0.0.0" version="29.0.3">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 OPR/123.0.0.0" version="29.1.0">
   <diagram name="UML" id="0">
-    <mxGraphModel dx="1181" dy="529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1063" dy="476" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Salao" value="Salao" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="420" y="20" width="220" height="140" as="geometry" />
+        <mxCell id="Salao" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="Salao" vertex="1">
+          <mxGeometry height="150" width="220" x="810" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="SalaoAttrs" value="- clientes: List&#xa;- profissionais: List" style="text;html=1;align=left;verticalAlign=top;" parent="Salao" vertex="1">
-          <mxGeometry y="30" width="220" height="40" as="geometry" />
+        <mxCell id="SalaoAttrs" parent="Salao" style="text;html=1;align=left;verticalAlign=top;" value="- clientes: List&#xa;- profissionais: List" vertex="1">
+          <mxGeometry height="40" width="220" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="SalaoMethods" value="+ cadastrarCliente( )&lt;br&gt;+ cadastrarProfissional( )&lt;br&gt;+ agendar( )" style="text;html=1;align=left;verticalAlign=top;" parent="Salao" vertex="1">
-          <mxGeometry y="78" width="220" height="60" as="geometry" />
+        <mxCell id="SalaoMethods" parent="Salao" style="text;html=1;align=left;verticalAlign=top;" value="+ cadastrarCliente( )&lt;br&gt;+ cadastrarProfissional( )&lt;br&gt;+ agendar( )&lt;div&gt;+&amp;nbsp;listarProfissionais( )&lt;/div&gt;" vertex="1">
+          <mxGeometry height="72" width="220" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Salao" vertex="1">
-          <mxGeometry y="70" width="220" height="8" as="geometry" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-1" parent="Salao" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="70" as="geometry" />
         </mxCell>
-        <mxCell id="Cliente" value="Cliente" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="274" y="210" width="220" height="130" as="geometry" />
+        <mxCell id="Cliente" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="Cliente" vertex="1">
+          <mxGeometry height="130" width="220" x="662" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="ClienteAttrs" value="- nome: str&#xa;- telefone: str&#xa;- historico: List" style="text;html=1;align=left;verticalAlign=top;" parent="Cliente" vertex="1">
-          <mxGeometry y="30" width="220" height="60" as="geometry" />
+        <mxCell id="ClienteAttrs" parent="Cliente" style="text;html=1;align=left;verticalAlign=top;" value="- nome: str&#xa;- telefone: str&#xa;- historico: List" vertex="1">
+          <mxGeometry height="60" width="220" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="ClienteMethods" value="+ adicionarAgendamento( )&lt;br&gt;+ listarHistorico( )" style="text;html=1;align=left;verticalAlign=top;" parent="Cliente" vertex="1">
-          <mxGeometry y="90" width="220" height="40" as="geometry" />
+        <mxCell id="ClienteMethods" parent="Cliente" style="text;html=1;align=left;verticalAlign=top;" value="+ adicionarAgendamento( )&lt;br&gt;+ listarHistorico( )" vertex="1">
+          <mxGeometry height="40" width="220" y="90" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Cliente" vertex="1">
-          <mxGeometry y="90" width="220" height="8" as="geometry" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-3" parent="Cliente" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="90" as="geometry" />
         </mxCell>
-        <mxCell id="Profissional" value="Profissional" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="570" y="210" width="220" height="130" as="geometry" />
+        <mxCell id="Profissional" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="Profissional" vertex="1">
+          <mxGeometry height="130" width="220" x="958" y="220" as="geometry" />
         </mxCell>
-        <mxCell id="ProfissionalAttrs" value="- nome: str&#xa;- especialidade: str&#xa;- servicos: List" style="text;html=1;align=left;verticalAlign=top;" parent="Profissional" vertex="1">
-          <mxGeometry y="30" width="240" height="60" as="geometry" />
+        <mxCell id="ProfissionalAttrs" parent="Profissional" style="text;html=1;align=left;verticalAlign=top;" value="- nome: str&#xa;- especialidade: str&#xa;- servicos: List" vertex="1">
+          <mxGeometry height="60" width="240" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="ProfissionalMethods" value="+ adicionarServico( )&lt;br&gt;+ podeRealizar( ): bool" style="text;html=1;align=left;verticalAlign=top;" parent="Profissional" vertex="1">
-          <mxGeometry y="90" width="240" height="40" as="geometry" />
+        <mxCell id="ProfissionalMethods" parent="Profissional" style="text;html=1;align=left;verticalAlign=top;" value="+ adicionarServico( )&lt;br&gt;+ podeRealizar( ): bool" vertex="1">
+          <mxGeometry height="40" width="240" y="90" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Profissional" vertex="1">
-          <mxGeometry y="82" width="220" height="8" as="geometry" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-4" parent="Profissional" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="82" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Service" target="AgendamentoAttrs" edge="1">
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-13" edge="1" parent="1" source="Service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="AgendamentoAttrs">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Service" value="Service" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="10" y="410" width="220" height="90" as="geometry" />
+        <mxCell id="Service" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="Service" vertex="1">
+          <mxGeometry height="90" width="220" x="370" y="410" as="geometry" />
         </mxCell>
-        <mxCell id="ServiceAttrs" value="- nome: str&#xa;- duracao: int&#xa;- preco: float" style="text;html=1;align=left;verticalAlign=top;" parent="Service" vertex="1">
-          <mxGeometry y="30" width="220" height="60" as="geometry" />
+        <mxCell id="ServiceAttrs" parent="Service" style="text;html=1;align=left;verticalAlign=top;" value="- nome: str&#xa;- duracao: int&#xa;- preco: float" vertex="1">
+          <mxGeometry height="60" width="220" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="ServiceFactory" value="ServiceFactory" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="10" y="290" width="220" height="70" as="geometry" />
+        <mxCell id="ServiceFactory" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="ServiceFactory" vertex="1">
+          <mxGeometry height="70" width="220" x="420" y="290" as="geometry" />
         </mxCell>
-        <mxCell id="ServiceFactoryMethods" value="+ criarServico( ): Service" style="text;html=1;align=left;verticalAlign=top;" parent="ServiceFactory" vertex="1">
-          <mxGeometry y="30" width="220" height="30" as="geometry" />
+        <mxCell id="ServiceFactoryMethods" parent="ServiceFactory" style="text;html=1;align=left;verticalAlign=top;" value="+ criarServico( ): Service" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="Agendamento" value="Agendamento" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="420" y="380" width="220" height="150" as="geometry" />
+        <mxCell id="Agendamento" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="Agendamento" vertex="1">
+          <mxGeometry height="150" width="220" x="810" y="380" as="geometry" />
         </mxCell>
-        <mxCell id="AgendamentoAttrs" value="- dataHora: datetime&lt;br&gt;- cliente: Cliente&lt;br&gt;- profissional: Profissional&lt;br&gt;- servico: Service&lt;br&gt;- valorFinal: float" style="text;html=1;align=left;verticalAlign=top;" parent="Agendamento" vertex="1">
-          <mxGeometry y="30" width="220" height="90" as="geometry" />
+        <mxCell id="AgendamentoAttrs" parent="Agendamento" style="text;html=1;align=left;verticalAlign=top;" value="- dataHora: datetime&lt;br&gt;- cliente: Cliente&lt;br&gt;- profissional: Profissional&lt;br&gt;- servico: Service&lt;br&gt;- valorFinal: float" vertex="1">
+          <mxGeometry height="90" width="220" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="AgendamentoMethods" value="+ calcularValor( ): float" style="text;html=1;align=left;verticalAlign=top;" parent="Agendamento" vertex="1">
-          <mxGeometry y="120" width="220" height="30" as="geometry" />
+        <mxCell id="AgendamentoMethods" parent="Agendamento" style="text;html=1;align=left;verticalAlign=top;" value="+ calcularValor( ): float" vertex="1">
+          <mxGeometry height="30" width="220" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="Agendamento" vertex="1">
-          <mxGeometry y="112" width="220" height="8" as="geometry" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-5" parent="Agendamento" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="112" as="geometry" />
         </mxCell>
-        <mxCell id="PriceStrategy" value="PriceStrategy" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="420" y="575" width="220" height="65" as="geometry" />
+        <mxCell id="PriceStrategy" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="PriceStrategy" vertex="1">
+          <mxGeometry height="65" width="220" x="810" y="560" as="geometry" />
         </mxCell>
-        <mxCell id="PriceStrategyMethods" value="+ calcular( ): float" style="text;html=1;align=left;verticalAlign=top;" parent="PriceStrategy" vertex="1">
-          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        <mxCell id="PriceStrategyMethods" parent="PriceStrategy" style="text;html=1;align=left;verticalAlign=top;" value="+ calcular( ): float" vertex="1">
+          <mxGeometry height="30" width="240" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="PrecoNormal" value="PrecoNormal" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="150" y="735" width="220" height="64" as="geometry" />
+        <mxCell id="PrecoNormal" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="PrecoNormal" vertex="1">
+          <mxGeometry height="64" width="220" x="540" y="660" as="geometry" />
         </mxCell>
-        <mxCell id="PrecoNormalMethods" value="+ calcular( ): float" style="text;html=1;align=left;verticalAlign=top;" parent="PrecoNormal" vertex="1">
-          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        <mxCell id="PrecoNormalMethods" parent="PrecoNormal" style="text;html=1;align=left;verticalAlign=top;" value="+ calcular( ): float" vertex="1">
+          <mxGeometry height="30" width="240" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="PrecoPromocional" value="PrecoPromocional" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="420" y="735" width="220" height="64" as="geometry" />
+        <mxCell id="PrecoPromocional" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="PrecoPromocional" vertex="1">
+          <mxGeometry height="64" width="220" x="810" y="660" as="geometry" />
         </mxCell>
-        <mxCell id="PrecoPromocionalMethods" value="+ calcular( ): float" style="text;html=1;align=left;verticalAlign=top;" parent="PrecoPromocional" vertex="1">
-          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        <mxCell id="PrecoPromocionalMethods" parent="PrecoPromocional" style="text;html=1;align=left;verticalAlign=top;" value="+ calcular( ): float" vertex="1">
+          <mxGeometry height="30" width="240" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="PrecoFidelidade" value="PrecoFidelidade" style="swimlane;rounded=0;html=1;fontStyle=1;" parent="1" vertex="1">
-          <mxGeometry x="710" y="735" width="220" height="64" as="geometry" />
+        <mxCell id="PrecoFidelidade" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="PrecoFidelidade" vertex="1">
+          <mxGeometry height="64" width="220" x="1100" y="660" as="geometry" />
         </mxCell>
-        <mxCell id="PrecoFidelidadeMethods" value="+ calcular( ): float" style="text;html=1;align=left;verticalAlign=top;" parent="PrecoFidelidade" vertex="1">
-          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        <mxCell id="PrecoFidelidadeMethods" parent="PrecoFidelidade" style="text;html=1;align=left;verticalAlign=top;" value="+ calcular( ): float" vertex="1">
+          <mxGeometry height="30" width="240" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SalaoMethods" target="Cliente" edge="1">
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-9" edge="1" parent="1" source="SalaoMethods" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Cliente">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SalaoMethods" target="Profissional" edge="1">
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-10" edge="1" parent="1" source="SalaoMethods" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Profissional">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ClienteMethods" target="Agendamento" edge="1">
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-11" edge="1" parent="1" source="ClienteMethods" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="Agendamento">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ProfissionalMethods" target="Agendamento" edge="1">
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-12" edge="1" parent="1" source="ProfissionalMethods" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="Agendamento">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-14" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ServiceFactory" target="Service" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="400" y="690" as="sourcePoint" />
-            <mxPoint x="560" y="690" as="targetPoint" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-14" edge="1" parent="1" source="ServiceFactory" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Service" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="810" y="690" as="sourcePoint" />
+            <mxPoint x="970" y="690" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-15" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="AgendamentoMethods" target="PriceStrategy" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="400" y="690" as="sourcePoint" />
-            <mxPoint x="560" y="690" as="targetPoint" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-15" edge="1" parent="1" source="AgendamentoMethods" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="PriceStrategy" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="790" y="690" as="sourcePoint" />
+            <mxPoint x="950" y="690" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-17" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="PrecoPromocional" target="PriceStrategy" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="530" y="825" as="sourcePoint" />
-            <mxPoint x="690" y="825" as="targetPoint" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-17" edge="1" parent="1" source="PrecoPromocional" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="PriceStrategy" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="920" y="825" as="sourcePoint" />
+            <mxPoint x="1080" y="825" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-18" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="PrecoFidelidade" target="PriceStrategy" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="340" y="740" as="sourcePoint" />
-            <mxPoint x="340" y="645" as="targetPoint" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-18" edge="1" parent="1" source="PrecoFidelidade" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="PriceStrategy" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="730" y="740" as="sourcePoint" />
+            <mxPoint x="730" y="645" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="-0iQO2dLPk7yfwG7yQ15-19" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="PrecoNormal" target="PriceStrategy" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="290" y="790" as="sourcePoint" />
-            <mxPoint x="290" y="695" as="targetPoint" />
+        <mxCell id="-0iQO2dLPk7yfwG7yQ15-19" edge="1" parent="1" source="PrecoNormal" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="PriceStrategy" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="680" y="790" as="sourcePoint" />
+            <mxPoint x="680" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-1" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="CorteMasculino" vertex="1">
+          <mxGeometry height="50" width="220" x="10" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-12" edge="1" parent="1" source="PjnnbMAoOlOWICTEQ7c7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-3" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="CorteFeminino" vertex="1">
+          <mxGeometry height="50" width="220" x="10" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-5" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="Barba" vertex="1">
+          <mxGeometry height="50" width="220" x="10" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-7" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="PintarCabelo" vertex="1">
+          <mxGeometry height="50" width="220" x="10" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-9" parent="1" style="swimlane;rounded=0;html=1;fontStyle=1;" value="Sombrancelha" vertex="1">
+          <mxGeometry height="50" width="220" x="10" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-11" edge="1" parent="1" source="PjnnbMAoOlOWICTEQ7c7-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.18;entryY=-0.033;entryDx=0;entryDy=0;entryPerimeter=0;" target="Service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-13" edge="1" parent="1" source="PjnnbMAoOlOWICTEQ7c7-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.167;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" target="Service">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="380.0666666666666" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-14" edge="1" parent="1" source="PjnnbMAoOlOWICTEQ7c7-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="ServiceAttrs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="480.0666666666666" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PjnnbMAoOlOWICTEQ7c7-15" edge="1" parent="1" source="PjnnbMAoOlOWICTEQ7c7-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.055;entryY=1.033;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" target="ServiceAttrs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="585" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
       </root>
