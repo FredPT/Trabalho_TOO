@@ -31,7 +31,7 @@ O objetivo é construir uma aplicação modular, extensível e coerente com os p
 
 #  Diagrama de Classes UML
 
-![Diagrama](Diagrama_Salão.png)
+![Diagrama](./Diagrama_Salão.png)
 
 ---
 
