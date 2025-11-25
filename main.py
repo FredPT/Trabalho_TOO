@@ -1,6 +1,6 @@
 from datetime import datetime
-from salao import Salao
-from service import ServiceFactory, PrecoNormal, PrecoPromocional, PrecoFidelidade
+from model.salao import Salao
+from model.service import ServiceFactory, PrecoNormal, PrecoPromocional, PrecoFidelidade
 
 def main():
     # Criar instância do salão

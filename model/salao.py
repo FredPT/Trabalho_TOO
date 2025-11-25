@@ -1,9 +1,9 @@
 from typing import List
 from datetime import datetime
-from cliente import Cliente
-from profissional import Profissional
-from agendamento import Agendamento
-from service import Service, ServiceFactory, PriceStrategy, PrecoNormal
+from model.cliente import Cliente
+from model.profissional import Profissional
+from model.agendamento import Agendamento
+from model.service import Service, ServiceFactory, PriceStrategy, PrecoNormal
 
 class Salao:
     def __init__(self):

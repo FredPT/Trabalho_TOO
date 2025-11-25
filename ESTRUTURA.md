@@ -1,27 +1,34 @@
 # Estrutura do Sistema de Gerenciamento de Salão de Beleza
 
-## Arquivos do Sistema
+## Estrutura de Arquivos
 
-### `service.py`
-- **Service**: Classe que representa um serviço do salão
+```
+Trabalho_Final/
+├── model/
+│   ├── __init__.py
+│   ├── service.py      # Service, ServiceFactory, PriceStrategy
+│   ├── cliente.py      # Cliente
+│   ├── profissional.py # Profissional
+│   ├── agendamento.py  # Agendamento
+│   └── salao.py        # Salao (classe principal)
+├── main.py             # Demonstração do sistema
+├── README.md
+└── ESTRUTURA.md
+```
+
+## Classes do Sistema
+
+### Pasta `model/`
+- **Service**: Representa um serviço do salão
 - **ServiceFactory**: Padrão Factory para criação de serviços
 - **PriceStrategy**: Interface abstrata para estratégias de preço
-- **PrecoNormal, PrecoPromocional, PrecoFidelidade**: Implementações concretas das estratégias
-
-### `cliente.py`
-- **Cliente**: Representa um cliente com histórico de agendamentos
-
-### `profissional.py`
-- **Profissional**: Representa um profissional que pode realizar serviços específicos
-
-### `agendamento.py`
-- **Agendamento**: Conecta cliente, profissional e serviço com cálculo de valor
-
-### `salao.py`
+- **Cliente**: Representa um cliente com histórico
+- **Profissional**: Representa um profissional que realiza serviços
+- **Agendamento**: Conecta cliente, profissional e serviço
 - **Salao**: Classe principal que gerencia todo o sistema
 
-### `main.py`
-- Demonstração do funcionamento do sistema com exemplos práticos
+### Arquivo principal
+- **main.py**: Demonstração do funcionamento do sistema
 
 ## Padrões de Projeto Implementados
 

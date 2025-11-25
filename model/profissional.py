@@ -1,5 +1,5 @@
 from typing import List
-from service import Service
+from model.service import Service
 
 class Profissional:
     def __init__(self, nome: str, especialidade: str):
