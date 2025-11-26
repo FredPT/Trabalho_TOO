@@ -1,82 +1,135 @@
 from datetime import datetime
 from model.salao import Salao
-from model.service import ServiceFactory, PrecoNormal, PrecoPromocional, PrecoFidelidade
+from model.service import PrecoNormal, PrecoPromocional, PrecoFidelidade
+from model.servicefactory import ServiceFactory
+from model.corte_masculino import CorteMasculino
+from model.corte_feminino import CorteFeminino
+from model.barba import Barba
+from model.pintar_cabelo import PintarCabelo
+from model.sobrancelha import Sobrancelha
 
 def main():
+    print("SISTEMA DE GERENCIAMENTO DE SALÃO DE BELEZA\n")
+    
     # Criar instância do salão
     salao = Salao()
+    print(salao.exibir_dados())
     
     # Cadastrar clientes
-    cliente1 = salao.cadastrarCliente("João Silva", "(11) 99999-9999")
-    cliente2 = salao.cadastrarCliente("Maria Santos", "(11) 88888-8888")
+    print("CADASTRANDO CLIENTES")
+    cliente1 = salao.cadastrarCliente("Frederico", "(51) 99999-9999")
+    print(cliente1.exibir_dados())
+    
+    cliente2 = salao.cadastrarCliente("Vanessa", "(51) 88888-8888")
+    print(cliente2.exibir_dados())
     
     # Cadastrar profissionais
-    prof1 = salao.cadastrarProfissional("Carlos", "Barbeiro")
+    prof1 = salao.cadastrarProfissional("João", "Barbeiro")
     prof2 = salao.cadastrarProfissional("Ana", "Cabeleireira")
     
-    # Adicionar serviços aos profissionais
+    # Criar serviços
+    # Via Factory
     corte_m = ServiceFactory.criarServico("CorteM")
-    barba = ServiceFactory.criarServico("Barba")
     corte_f = ServiceFactory.criarServico("CorteF")
     pintar = ServiceFactory.criarServico("Pintar")
     
+    # Via Classe Direta
+    barba = Barba()
+    sobrancelha = Sobrancelha()
+    
+    # Adicionar serviços aos profissionais
     prof1.adicionarServico(corte_m)
     prof1.adicionarServico(barba)
     prof2.adicionarServico(corte_f)
     prof2.adicionarServico(pintar)
+    prof2.adicionarServico(sobrancelha)
+    
+    print("Profissionais cadastrados com seus serviços:")
+    print(prof1.exibir_dados())
+    print(prof2.exibir_dados())
+    
+    # Exibir alguns serviços disponíveis
+    print("ALGUNSSERVIÇOS DISPONÍVEIS")
+    print(corte_m.exibir_dados())
+    print(corte_f.exibir_dados())
+    print(barba.exibir_dados())
+    print(pintar.exibir_dados())
+    
     
     # Realizar agendamentos com diferentes estratégias de preço
-    print("=== SISTEMA DE GERENCIAMENTO DE SALÃO DE BELEZA ===")
-    print()
+    print("=== REALIZANDO AGENDAMENTOS ===")
     
     # Agendamento 1 - Preço normal
     agend1 = salao.agendar(
-        datetime(2024, 12, 15, 10, 0),
+        datetime(2025, 12, 1, 10, 0),
         cliente1,
         prof1,
         "CorteM",
         PrecoNormal()
     )
-    print(f"Agendamento 1: {cliente1.nome} - {agend1.servico.nome} - R$ {agend1.valorFinal:.2f}")
+    print(agend1.exibir_dados())
     
     # Agendamento 2 - Preço promocional
     agend2 = salao.agendar(
-        datetime(2024, 12, 15, 14, 0),
+        datetime(2025, 12, 3, 14, 0),
         cliente2,
         prof2,
         "CorteF",
         PrecoPromocional()
     )
-    print(f"Agendamento 2: {cliente2.nome} - {agend2.servico.nome} - R$ {agend2.valorFinal:.2f} (Promocional)")
+    print(agend2.exibir_dados())
     
     # Agendamento 3 - Preço fidelidade
     agend3 = salao.agendar(
-        datetime(2024, 12, 15, 16, 0),
+        datetime(2025, 12, 5, 16, 0),
         cliente1,
         prof1,
         "Barba",
         PrecoFidelidade()
     )
-    print(f"Agendamento 3: {cliente1.nome} - {agend3.servico.nome} - R$ {agend3.valorFinal:.2f} (Fidelidade)")
+    print(agend3.exibir_dados())
     
-    print()
-    print("=== HISTÓRICO DE CLIENTES ===")
+    # Agendamento 4 - Sobrancelha com preço normal
+    agend4 = salao.agendar(
+        datetime(2025, 12, 16, 9, 30),
+        cliente2,
+        prof2,
+        "Sobrancelha"
+    )
+    print(agend4.exibir_dados())
     
-    # Mostrar histórico do cliente 1
-    print(f"\nHistórico de {cliente1.nome}:")
-    for agend in cliente1.listarHistorico():
-        print(f"  - {agend.dataHora.strftime('%d/%m/%Y %H:%M')} - {agend.servico.nome} - R$ {agend.valorFinal:.2f}")
+    # Mostrar dados atualizados do salão
+    print("STATUS FINAL DO SALÃO")
+    print(salao.exibir_dados())
     
-    # Mostrar histórico do cliente 2
-    print(f"\nHistórico de {cliente2.nome}:")
-    for agend in cliente2.listarHistorico():
-        print(f"  - {agend.dataHora.strftime('%d/%m/%Y %H:%M')} - {agend.servico.nome} - R$ {agend.valorFinal:.2f}")
+    # Mostrar histórico atualizado dos clientes
+    print("HISTÓRICO DE CLIENTES")
+    print(cliente1.exibir_dados())
+    print(cliente2.exibir_dados())
     
-    print()
-    print("=== PROFISSIONAIS CADASTRADOS ===")
-    for prof in salao.listarProfissionais():
-        print(f"- {prof.nome} ({prof.especialidade})")
-        print(f"  Serviços: {[s.nome for s in prof.servicos]}")
+
+    # Modificação de agendamento
+    print("Modificando agendamento:")
+    print(f"Data original: {agend1.dataHora.strftime('%d/%m/%Y %H:%M')}")
+    agend1.dataHora = datetime(2025, 12, 1, 11, 0)
+    print(f"Nova data: {agend1.dataHora.strftime('%d/%m/%Y %H:%M')}")
+    
+    # Modificação de cliente
+    print("\nModificando dados do cliente:")
+    print(f"Nome original: {cliente1.nome}")
+    cliente1.nome = "Frederico P Taufer"
+    print(f"Nome modificado: {cliente1.nome}")
+    
+    # Modificação de profissional
+    print("\nModificando dados do profissional:")
+    print(f"Especialidade original: {prof1.especialidade}")
+    prof1.especialidade = "Barbeiro Especialista"
+    print(f"Especialidade modificada: {prof1.especialidade}")
+    
+
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"\nErro durante execução: {e}")
