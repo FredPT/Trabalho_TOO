@@ -3,6 +3,10 @@
 
 ---
 
+##  Diagrama de Classes UML
+
+![Diagrama](./Diagrama/Diagrama_Salão.png)
+
 ##  Descrição do Sistema
 
 Sistema completo para gerenciamento de salão de beleza implementado em Python, aplicando todos os pilares da POO e padrões de projeto **Factory** e **Strategy**.
