@@ -1,7 +1,8 @@
 from datetime import datetime
 from model.cliente import Cliente
 from model.profissional import Profissional
-from model.service import Service, PriceStrategy
+from model.service import Service
+from model.price_strategy import PriceStrategy
 
 class Agendamento:
     def __init__(self, dataHora: datetime, cliente: Cliente, profissional: Profissional, servico: Service):

@@ -1,5 +1,3 @@
-from abc import ABC, abstractmethod
-
 class Service:
     def __init__(self, nome: str, duracao: int, preco: float):
         self.__nome = nome
@@ -45,19 +43,3 @@ class Service:
         dados += f"Preço: R$ {self.__preco:.2f}\n"
         return dados
 
-class PriceStrategy(ABC):
-    @abstractmethod
-    def calcular(self, preco_base: float) -> float:
-        pass
-
-class PrecoNormal(PriceStrategy):
-    def calcular(self, preco_base: float) -> float:
-        return preco_base
-
-class PrecoPromocional(PriceStrategy):
-    def calcular(self, preco_base: float) -> float:
-        return preco_base * 0.8  # 20% desconto
-
-class PrecoFidelidade(PriceStrategy):
-    def calcular(self, preco_base: float) -> float:
-        return preco_base * 0.9  # 10% desconto

@@ -57,7 +57,7 @@ def main():
     
     
     # Realizar agendamentos com diferentes estratégias de preço
-    print("=== REALIZANDO AGENDAMENTOS ===")
+    print("REALIZANDO AGENDAMENTOS")
     
     # Agendamento 1 - Preço normal
     agend1 = salao.agendar(
@@ -129,7 +129,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"\nErro durante execução: {e}")
+    main()

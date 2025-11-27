@@ -3,190 +3,169 @@
 
 ---
 
-##  Descrição do Tema
+##  Descrição do Sistema
 
-Este projeto consiste no desenvolvimento de um sistema orientado a objetos para gerenciamento de um salão de beleza, permitindo gerenciar:
+Sistema completo para gerenciamento de salão de beleza implementado em Python, aplicando todos os pilares da POO e padrões de projeto **Factory** e **Strategy**.
 
-- Clientes  
-- Profissionais  
-- Serviços oferecidos  
-- Agendamentos  
-- Cálculo de preço com estratégias diferentes  
-- Histórico de atendimentos  
-
-O sistema foi implementado em Python, aplicando todos os pilares da POO e dois padrões de projeto: **Factory** e **Strategy**.
-
----
-
-##  Objetivo do Projeto
-
-O objetivo é construir uma aplicação modular, extensível e coerente com os princípios da POO. O sistema demonstra:
-
-- Aplicação dos pilares da POO  
-- Uso prático de padrões de projeto  
-- Modelagem UML  
-- Estrutura clara e apropriada
+### **Funcionalidades**
+- Cadastro de clientes e profissionais
+- Gerenciamento de serviços (cortes, barba, sobrancelha, pintura)
+- Sistema de agendamentos com validações
+- Cálculo dinâmico de preços com diferentes estratégias
+- Histórico completo de atendimentos
+- Validação de competências dos profissionais
 
 ---
 
-#  Diagrama de Classes UML
+##  Como Usar o Sistema
 
-![Diagrama](/Diagrama/Diagrama_Salão.png)
+### **1. Criar o Salão**
+```python
+from model.salao import Salao
+salao = Salao()
+```
 
----
+### **2. Cadastrar Clientes**
+```python
+cliente = salao.cadastrarCliente("Frederico", "51999999999")
+```
 
-#  Descrição das Classes e Pilares da POO
+### **3. Cadastrar Profissionais**
+```python
+profissional = salao.cadastrarProfissional("Carmem", "Cabeleireira")
+```
 
-A seguir estão as classes do sistema e os pilares aplicados em cada uma.
+### **4. Adicionar Serviços aos Profissionais**
+```python
+from model.servicefactory import ServiceFactory
+servico_corte = ServiceFactory.criarServico("CorteM")
+profissional.adicionarServico(servico_corte)
+```
 
----
+### **5. Fazer Agendamentos**
+```python
+from datetime import datetime
+from model.preco_promocional import PrecoPromocional
 
-##  Salao
-
-Gerencia todo o sistema.
-
-### **Atributos**
-- clientes  
-- profissionais  
-
-### **Métodos**
-- cadastrarCliente()  
-- cadastrarProfissional()  
-- agendar()  
-
-### **Pilares da POO**
-- **Abstração:** representa o conceito de um salão.  
-- **Encapsulamento:** mantém controle das listas de clientes e profissionais.  
-- **Polimorfismo:** usa estratégias de preço de forma genérica.  
-
----
-
-##  Cliente
-
-Representa um cliente do salão.
-
-### **Atributos**
-- nome  
-- telefone  
-- historico  
-
-### **Métodos**
-- adicionarAgendamento()  
-- listarHistorico()  
-
-### **Pilares da POO**
-- **Abstração:** modela um cliente do mundo real.  
-- **Encapsulamento:** controla o histórico apenas por métodos próprios.  
+dataHora = datetime(2024, 12, 15, 14, 30)
+agendamento = salao.agendar(dataHora, cliente, profissional, "CorteM", PrecoPromocional())
+```
 
 ---
 
-##  Profissional
+##  Serviços Disponíveis
 
-Representa profissionais do salão.
-
-### **Atributos**
-- nome  
-- especialidade  
-- servicos  
-
-### **Métodos**
-- adicionarServico()  
-- podeRealizar()  
-
-### **Pilares da POO**
-- **Abstração:** representa um profissional real.  
-- **Encapsulamento:** gerencia serviços internamente.  
+| Código      | Serviço         | Duração | Preço Base |
+|-------------|-----------------|---------|------------|
+| CorteM      | Corte Masculino | 30 min  | R$ 25,00   |
+| CorteF      | Corte Feminino  | 45 min  | R$ 40,00   |
+| Barba       | Barba           | 15 min  | R$ 15,00   |
+| Pintar      | Pintar Cabelo   | 120 min | R$ 80,00   |
+| Sobrancelha | Sobrancelha     | 15 min  | R$ 20,00   |
 
 ---
 
-##  Service
+##  Estratégias de Preço
 
-Representa um serviço do salão.
-
-### **Atributos**
-- nome  
-- duracao  
-- preco  
-
-### **Pilares da POO**
-- **Abstração:** representa um serviço real de forma clara.  
+| Estratégia       | Desconto | Uso                 |
+|------------------|----------|---------------------|
+| PrecoNormal      | 0%       | Preço padrão        |
+| PrecoPromocional | 20%      | Promoções especiais |
+| PrecoFidelidade  | 10%      | Clientes frequentes |
 
 ---
 
-##  ServiceFactory (Factory Pattern)
+#  Arquitetura do Sistema
 
-Responsável por criar serviços.
-
-### **Métodos**
-- criarServico()
-
-### **Pilares da POO**
-- **Abstração:** isola a criação dos serviços.
-
----
-
-##  Agendamento
-
-Conecta cliente, profissional e serviço.
-
-### **Atributos**
-- dataHora  
-- cliente  
-- profissional  
-- servico  
-- valorFinal  
-
-### **Métodos**
-- calcularValor()  
-
-### **Pilares da POO**
-- **Abstração:** representa um agendamento real.  
-- **Encapsulamento:** controla o valor calculado internamente.  
+##  Estrutura de Arquivos
+```
+Trabalho_Final/
+├── model/
+│    ├── salao.py              # Classe principal do sistema
+│    ├── cliente.py            # Gerenciamento de clientes
+│    ├── profissional.py       # Gerenciamento de profissionais
+│    ├── agendamento.py        # Lógica de agendamentos
+│    ├── service.py            # Classe base de serviços
+│    ├── servicefactory.py     # Factory para criação de serviços
+│    ├── price_strategy.py     # Interface de estratégias de preço
+│    ├── preco_normal.py       # Estratégia preço normal
+│    ├── preco_promocional.py  # Estratégia preço promocional
+│    ├── preco_fidelidade.py   # Estratégia preço fidelidade
+│    ├── corte_masculino.py    # Serviço corte masculino
+│    ├── corte_feminino.py     # Serviço corte feminino
+│    ├── barba.py              # Serviço barba
+│    ├── pintar_cabelo.py      # Serviço pintura de cabelo
+│    └── sobrancelha.py        # Serviço sobrancelha
+├── main.py                    # Demonstração do sistema
+└── README.md
+```
 
 ---
 
-##  PriceStrategy (Strategy Pattern)
+##  Pilares da POO Aplicados
 
-Define a interface para cálculo de preços.
+### **Abstração**
+- Classes modelam entidades do mundo real (Cliente, Profissional, Agendamento)
+- Interfaces abstratas (PriceStrategy) definem contratos claros
 
-### **Método**
-- calcular()
+### **Encapsulamento**
+- Atributos privados com getters/setters
+- Controle de acesso aos dados internos
+- Validações nos métodos de modificação
 
-### **Subclasses**
-- PrecoNormal  
-- PrecoPromocional  
-- PrecoFidelidade  
+### **Herança**
+- Serviços específicos herdam de Service
+- Estratégias de preço herdam de PriceStrategy
 
-### **Pilares da POO**
-- **Herança:** subclasses derivam da interface PriceStrategy.  
-- **Polimorfismo:** cada estratégia implementa seu próprio cálculo.  
-- **Encapsulamento:** cada classe guarda sua lógica de preço.  
+### **Polimorfismo**
+- Diferentes estratégias de preço com mesmo método
+- ServiceFactory cria diferentes tipos de serviço
 
 ---
 
-#  Padrões de Projeto Aplicados
+##  Validações do Sistema
 
-##  Factory — *ServiceFactory*
+- **Profissional:** Deve poder realizar o serviço solicitado
+- **Data/Hora:** Deve ser objeto datetime válido
+- **Preços:** Devem ser valores positivos
+- **Duração:** Entre 1 e 499 minutos
+- **Dados:** Strings são automaticamente limpos (strip)
 
-O padrão Factory centraliza a criação de objetos Service, permitindo:
+---
 
-- Padronização  
-- Manutenção facilitada  
-- Extensibilidade
+##  Exemplo Completo de Uso
 
+```python
+from datetime import datetime
+from model.salao import Salao
+from model.servicefactory import ServiceFactory
+from model.preco_promocional import PrecoPromocional
 
-##  Strategy — *PriceStrategy*
+# Criar salão
+salao = Salao()
 
-O padrão Strategy permite alternar dinamicamente entre diferentes formas de cálculo de preço.
+# Cadastrar cliente
+cliente = salao.cadastrarCliente("João", "51987654321")
 
-**Estratégias implementadas:**
+# Cadastrar profissional
+profissional = salao.cadastrarProfissional("Frederico", "Barbeiro")
 
-- Preço normal  
-- Preço promocional  
-- Preço fidelidade  
+# Adicionar serviços ao profissional
+servico_corte = ServiceFactory.criarServico("CorteM")
+servico_barba = ServiceFactory.criarServico("Barba")
+profissional.adicionarServico(servico_corte)
+profissional.adicionarServico(servico_barba)
 
-**Benefícios:**
+# Fazer agendamento
+dataHora = datetime(2024, 12, 20, 15, 0)
+agendamento = salao.agendar(
+    dataHora, 
+    cliente, 
+    profissional, 
+    "CorteM", 
+    PrecoPromocional()
+)
 
-- Evita if/else extensos  
-- Facilita adicionar novas regras  
-- Mantém o código limpo e modular  
+print(agendamento.exibir_dados())
+# Saída: Valor final com 20% de desconto
+```  
