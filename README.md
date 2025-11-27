@@ -7,13 +7,15 @@
 
 ![Diagrama](./Diagrama/Diagrama_Salão.png)
 
+---
+
 ##  Descrição do Sistema
 
 Sistema completo para gerenciamento de salão de beleza implementado em Python, aplicando todos os pilares da POO e padrões de projeto **Factory** e **Strategy**.
 
 ### **Funcionalidades**
 - Cadastro de clientes e profissionais
-- Gerenciamento de serviços (cortes, barba, sobrancelha, pintura)
+- Gerenciamento de serviços (cortes, barba, sobrancelha e pintura)
 - Sistema de agendamentos com validações
 - Cálculo dinâmico de preços com diferentes estratégias
 - Histórico completo de atendimentos
@@ -51,7 +53,7 @@ profissional.adicionarServico(servico_corte)
 from datetime import datetime
 from model.preco_promocional import PrecoPromocional
 
-dataHora = datetime(2024, 12, 15, 14, 30)
+dataHora = datetime(2025, 12, 15, 14, 30)
 agendamento = salao.agendar(dataHora, cliente, profissional, "CorteM", PrecoPromocional())
 ```
 
@@ -83,7 +85,7 @@ agendamento = salao.agendar(dataHora, cliente, profissional, "CorteM", PrecoProm
 
 ##  Estrutura de Arquivos
 ```
-Trabalho_Final/
+Trabalho_TOO/
 ├── model/
 │    ├── salao.py              # Classe principal do sistema
 │    ├── cliente.py            # Gerenciamento de clientes
@@ -161,7 +163,7 @@ profissional.adicionarServico(servico_corte)
 profissional.adicionarServico(servico_barba)
 
 # Fazer agendamento
-dataHora = datetime(2024, 12, 20, 15, 0)
+dataHora = datetime(2025, 12, 20, 15, 0)
 agendamento = salao.agendar(
     dataHora, 
     cliente, 
