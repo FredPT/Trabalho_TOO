@@ -11,51 +11,21 @@
 
 ##  Descrição do Sistema
 
-Sistema completo para gerenciamento de salão de beleza implementado em Python, aplicando todos os pilares da POO e padrões de projeto **Factory** e **Strategy**.
+Sistema completo para gerenciamento de salão de beleza implementado em Python, aplicando todos os pilares da **POO**.
+
+### **Objetivos Específicos:**
+- Implementar todos os **4 pilares da POO** (Abstração, Encapsulamento, Herança e Polimorfismo)
+- Aplicar padrões **Factory** e **Strategy**
+- Criar sistema funcional com validações
+- Demonstrar boas práticas de programação
 
 ### **Funcionalidades**
 - Cadastro de clientes e profissionais
-- Gerenciamento de serviços (cortes, barba, sobrancelha e pintura)
+- Gerenciamento de serviços com diferentes preços
 - Sistema de agendamentos com validações
 - Cálculo dinâmico de preços com diferentes estratégias
 - Histórico completo de atendimentos
 - Validação de competências dos profissionais
-
----
-
-##  Como Usar o Sistema
-
-### **1. Criar o Salão**
-```python
-from model.salao import Salao
-salao = Salao()
-```
-
-### **2. Cadastrar Clientes**
-```python
-cliente = salao.cadastrarCliente("Frederico", "51999999999")
-```
-
-### **3. Cadastrar Profissionais**
-```python
-profissional = salao.cadastrarProfissional("Carmem", "Cabeleireira")
-```
-
-### **4. Adicionar Serviços aos Profissionais**
-```python
-from model.servicefactory import ServiceFactory
-servico_corte = ServiceFactory.criarServico("CorteM")
-profissional.adicionarServico(servico_corte)
-```
-
-### **5. Fazer Agendamentos**
-```python
-from datetime import datetime
-from model.preco_promocional import PrecoPromocional
-
-dataHora = datetime(2025, 12, 15, 14, 30)
-agendamento = salao.agendar(dataHora, cliente, profissional, "CorteM", PrecoPromocional())
-```
 
 ---
 
@@ -126,6 +96,82 @@ Trabalho_TOO/
 ### **Polimorfismo**
 - Diferentes estratégias de preço com mesmo método
 - ServiceFactory cria diferentes tipos de serviço
+
+---
+
+##  Descrição Detalhada das Classes
+
+### **Classes Principais**
+
+#### **Salao**
+- **Responsabilidade:** Gerenciar todo o sistema do salão
+- **Pilares POO:** Encapsulamento (listas privadas), Abstração (interface simples)
+- **Funcionalidades:**
+  - Cadastro de clientes e profissionais
+  - Criação de agendamentos com validações
+  - Controle de listas internas
+
+#### **Cliente**
+- **Responsabilidade:** Representar clientes do salão
+- **Pilares POO:** Encapsulamento (atributos privados com getters/setters)
+- **Funcionalidades:**
+  - Armazenar dados pessoais (nome, telefone)
+  - Manter histórico de agendamentos
+  - Validação automática de dados (strip)
+
+#### **Profissional**
+- **Responsabilidade:** Representar profissionais do salão
+- **Pilares POO:** Encapsulamento, Abstração (interface para verificar competências)
+- **Funcionalidades:**
+  - Gerenciar especialidade e serviços oferecidos
+  - Validar se pode realizar determinado serviço
+  - Controlar lista de serviços habilitados
+
+#### **Agendamento**
+- **Responsabilidade:** Conectar cliente, profissional e serviço
+- **Pilares POO:** Encapsulamento, Polimorfismo (uso de estratégias)
+- **Funcionalidades:**
+  - Armazenar data/hora com validação
+  - Calcular valor final usando estratégias
+  - Manter referências para todas as entidades
+
+### **Hierarquia de Serviços**
+
+#### **Service** - *Classe Base Abstrata*
+- **Responsabilidade:** Definir estrutura comum para todos os serviços
+- **Pilares POO:** Abstração, Encapsulamento
+- **Atributos:** nome, duração, preço (todos privados com validações)
+
+#### **Classes Filhas de Service:**
+- **CorteMasculino:** Herda de Service (30 min, R$ 25,00)
+- **CorteFeminino:** Herda de Service (45 min, R$ 40,00)
+- **Barba:** Herda de Service (15 min, R$ 15,00)
+- **PintarCabelo:** Herda de Service (120 min, R$ 80,00)
+- **Sobrancelha:** Herda de Service (15 min, R$ 20,00)
+
+**Pilar Aplicado:** **Herança** - Todas herdam estrutura e comportamento da classe Service
+
+### **Padrão Factory**
+
+#### **ServiceFactory**
+- **Responsabilidade:** Criar instâncias de serviços dinamicamente
+- **Padrão:** Factory Method
+- **Funcionalidade:** Método estático criarServico() que retorna objetos específicos baseado em string
+- **Vantagem:** Desacopla criação de objetos do código cliente
+
+### **Padrão Strategy**
+
+#### **PriceStrategy** - *Interface Abstrata*
+- **Responsabilidade:** Definir contrato para estratégias de preço
+- **Padrão:** Strategy Pattern
+- **Método Abstrato:** calcular(preco_base)
+
+#### **Estratégias Concretas:**
+- **PrecoNormal:** Retorna preço base sem alteração (0% desconto)
+- **PrecoPromocional:** Aplica 20% de desconto (retorna preco_base * 0.8)
+- **PrecoFidelidade:** Aplica 10% de desconto (retorna preco_base * 0.9)
+
+**Pilar Aplicado:** **Polimorfismo** - Diferentes implementações do método calcular() com mesmo comportamento esperado
 
 ---
 
