@@ -49,7 +49,7 @@ def main():
     print(prof2.exibir_dados())
     
     # Exibir alguns serviços disponíveis
-    print("ALGUNSSERVIÇOS DISPONÍVEIS")
+    print("ALGUNS SERVIÇOS DISPONÍVEIS")
     print(corte_m.exibir_dados())
     print(corte_f.exibir_dados())
     print(barba.exibir_dados())
