@@ -1,5 +1,5 @@
 class Service:
-    def __init__(self, nome: str, duracao: int, preco: float):
+    def __init__(self, nome, duracao, preco):
         self.__nome = nome
         self.__duracao = duracao
         self.__preco = preco

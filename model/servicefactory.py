@@ -7,7 +7,7 @@ from model.sobrancelha import Sobrancelha
 
 class ServiceFactory:
     @staticmethod
-    def criarServico(tipo: str) -> Service:
+    def criarServico(tipo):
         # Dicionário de serviços
         servicos = {
             "CorteM": CorteMasculino(),

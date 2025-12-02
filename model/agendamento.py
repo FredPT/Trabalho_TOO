@@ -1,11 +1,7 @@
 from datetime import datetime
-from model.cliente import Cliente
-from model.profissional import Profissional
-from model.service import Service
-from model.price_strategy import PriceStrategy
 
 class Agendamento:
-    def __init__(self, dataHora: datetime, cliente: Cliente, profissional: Profissional, servico: Service):
+    def __init__(self, dataHora, cliente, profissional, servico):
         self.__dataHora = dataHora
         self.__cliente = cliente
         self.__profissional = profissional
@@ -59,7 +55,7 @@ class Agendamento:
     def valorFinal(self, novo_valor):
         self.__valorFinal = novo_valor
     
-    def calcularValor(self, estrategia: PriceStrategy) -> float:
+    def calcularValor(self, estrategia):
         self.__valorFinal = estrategia.calcular(self.__servico.preco)
         return self.__valorFinal
     

@@ -1,4 +1,3 @@
-from typing import List
 from datetime import datetime
 from model.cliente import Cliente
 from model.profissional import Profissional
@@ -10,8 +9,8 @@ from model.servicefactory import ServiceFactory
 
 class Salao:
     def __init__(self):
-        self.__clientes: List[Cliente] = []
-        self.__profissionais: List[Profissional] = []
+        self.__clientes = []
+        self.__profissionais = []
 
     def __str__(self):
         return f"Salão - {len(self.__clientes)} clientes, {len(self.__profissionais)} profissionais"
@@ -24,18 +23,18 @@ class Salao:
     def profissionais(self):
         return self.__profissionais
     
-    def cadastrarCliente(self, nome: str, telefone: str) -> Cliente:
+    def cadastrarCliente(self, nome, telefone):
         cliente = Cliente(nome, telefone)
         self.__clientes.append(cliente)
         return cliente
     
-    def cadastrarProfissional(self, nome: str, especialidade: str) -> Profissional:
+    def cadastrarProfissional(self, nome, especialidade):
         profissional = Profissional(nome, especialidade)
         self.__profissionais.append(profissional)
         return profissional
     
-    def agendar(self, dataHora: datetime, cliente: Cliente, profissional: Profissional, 
-                tipo_servico: str, estrategia: PriceStrategy = None) -> Agendamento:
+    def agendar(self, dataHora, cliente, profissional, 
+                tipo_servico, estrategia=None):
         servico = ServiceFactory.criarServico(tipo_servico)
         
         if not profissional.podeRealizar(servico):
@@ -51,7 +50,7 @@ class Salao:
         
         return agendamento
     
-    def listarProfissionais(self) -> List[Profissional]:
+    def listarProfissionais(self):
         return self.__profissionais
     
     def exibir_dados(self):

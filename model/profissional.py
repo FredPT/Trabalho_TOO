@@ -1,11 +1,8 @@
-from typing import List
-from model.service import Service
-
 class Profissional:
-    def __init__(self, nome: str, especialidade: str):
+    def __init__(self, nome, especialidade):
         self.nome = nome
         self.especialidade = especialidade
-        self.__servicos: List[Service] = []
+        self.__servicos = []
 
     def __str__(self):
         return f"Profissional: {self.__nome} ({self.__especialidade})"
@@ -30,10 +27,10 @@ class Profissional:
     def servicos(self):
         return self.__servicos
     
-    def adicionarServico(self, servico: Service):
+    def adicionarServico(self, servico):
         self.__servicos.append(servico)
     
-    def podeRealizar(self, servico: Service) -> bool:
+    def podeRealizar(self, servico):
         return any(s.nome == servico.nome for s in self.__servicos)
     
     def exibir_dados(self):

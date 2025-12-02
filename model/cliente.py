@@ -1,10 +1,8 @@
-from typing import List
-
 class Cliente:
-    def __init__(self, nome: str, telefone: str):
+    def __init__(self, nome, telefone):
         self.nome = nome
         self.telefone = telefone
-        self.__historico: List = []
+        self.__historico: list = []
 
     def __str__(self):
         return f"Cliente: {self.__nome} - {self.__telefone}"
@@ -32,8 +30,6 @@ class Cliente:
     def adicionarAgendamento(self, agendamento):
         self.__historico.append(agendamento)
     
-    def listarHistorico(self) -> List:
-        return self.__historico
     
     def exibir_dados(self):
         dados = f"Cliente cadastrado:\n"

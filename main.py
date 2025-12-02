@@ -1,11 +1,10 @@
 from datetime import datetime
 from model.salao import Salao
-from model.service import PrecoNormal, PrecoPromocional, PrecoFidelidade
+from model.preco_normal import PrecoNormal
+from model.preco_promocional import PrecoPromocional
+from model.preco_fidelidade import PrecoFidelidade
 from model.servicefactory import ServiceFactory
-from model.corte_masculino import CorteMasculino
-from model.corte_feminino import CorteFeminino
 from model.barba import Barba
-from model.pintar_cabelo import PintarCabelo
 from model.sobrancelha import Sobrancelha
 
 def main():
@@ -97,6 +96,16 @@ def main():
         "Sobrancelha"
     )
     print(agend4.exibir_dados())
+    
+    # Agendamento 4 - Barba com preço normal
+    agend5 = salao.agendar(
+        datetime(2025, 12, 18, 9, 30),
+        cliente1,
+        prof2,
+        "Pintar",
+        PrecoPromocional()
+    )
+    print(agend5.exibir_dados())
     
     # Mostrar dados atualizados do salão
     print("STATUS FINAL DO SALÃO")
