@@ -97,7 +97,7 @@ def main():
     )
     print(agend4.exibir_dados())
     
-    # Agendamento 4 - Barba com preço normal
+    # Agendamento 5 - Pintar com preço promocional
     agend5 = salao.agendar(
         datetime(2025, 12, 18, 9, 30),
         cliente1,

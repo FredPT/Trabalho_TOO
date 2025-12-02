@@ -30,6 +30,8 @@ class Cliente:
     def adicionarAgendamento(self, agendamento):
         self.__historico.append(agendamento)
     
+    def listarHistorico(self):
+        return self.__historico
     
     def exibir_dados(self):
         dados = f"Cliente cadastrado:\n"
