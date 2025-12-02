@@ -5,7 +5,7 @@ class Service:
         self.__preco = preco
 
     def __str__(self):
-        return f"Serviço: {self.__nome} - {self.__duracao}min - R$ {self.__preco:.2f}"
+        return f"Serviço: {self.__nome} - {self.__duracao} min - R$ {self.__preco:.2f}"
     
     @property
     def nome(self):
@@ -35,7 +35,7 @@ class Service:
         if novo_preco > 0:
             self.__preco = novo_preco
         else:
-            print("Valor para preço inválido!!")
+            print("Valor para preço inválido!")
     
     def exibir_dados(self):
         dados = f"Serviço: {self.__nome}\n"
