@@ -31,7 +31,10 @@ class Profissional:
         self.__servicos.append(servico)
     
     def podeRealizar(self, servico):
-        return any(s.nome == servico.nome for s in self.__servicos)
+        for s in self.__servicos:
+            if s.nome == servico.nome:
+                return True
+        return False
     
     def exibir_dados(self):
         dados = f"Profissional cadastrado:\n"
@@ -39,5 +42,8 @@ class Profissional:
         dados += f"  Especialidade: {self.__especialidade}\n"
         dados += f"  Serviços oferecidos: {len(self.__servicos)}\n"
         if self.__servicos:
-            dados += f"  Lista de serviços: {', '.join([s.nome for s in self.__servicos])}\n"
+            nomes_servicos = []
+            for s in self.__servicos:
+                nomes_servicos.append(s.nome)
+            dados += f"  Lista de serviços: {', '.join(nomes_servicos)}\n"
         return dados
