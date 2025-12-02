@@ -13,7 +13,7 @@
 
 Sistema completo para gerenciamento de salão de beleza implementado em Python, aplicando todos os pilares da **POO**.
 
-### **Objetivos Específicos:**
+### **Objetivos**
 - Implementar todos os **4 pilares da POO** (Abstração, Encapsulamento, Herança e Polimorfismo)
 - Aplicar padrões **Factory** e **Strategy**
 - Criar sistema funcional com validações
@@ -46,8 +46,8 @@ Sistema completo para gerenciamento de salão de beleza implementado em Python, 
 | Estratégia       | Desconto | Uso                 |
 |------------------|----------|---------------------|
 | PrecoNormal      | 0%       | Preço padrão        |
-| PrecoPromocional | 20%      | Promoções especiais |
 | PrecoFidelidade  | 10%      | Clientes frequentes |
+| PrecoPromocional | 20%      | Promoções especiais |
 
 ---
 
@@ -135,6 +135,8 @@ Trabalho_TOO/
   - Calcular valor final usando estratégias
   - Manter referências para todas as entidades
 
+---
+
 ### **Hierarquia de Serviços**
 
 #### **Service** - *Classe Base Abstrata*
@@ -150,6 +152,8 @@ Trabalho_TOO/
 - **Sobrancelha:** Herda de Service (15 min, R$ 20,00)
 
 **Pilar Aplicado:** **Herança** - Todas herdam estrutura e comportamento da classe Service
+
+---
 
 ### **Padrão Factory**
 
