@@ -24,7 +24,7 @@ class Service:
         if 0 < nova_duracao < 500:
             self.__duracao = nova_duracao
         else:
-            print("Valor para duração inválido!!")
+            print("Valor para duração inválido!")
 
     @property
     def preco(self):

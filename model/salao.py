@@ -1,9 +1,6 @@
-from datetime import datetime
 from model.cliente import Cliente
 from model.profissional import Profissional
 from model.agendamento import Agendamento
-from model.service import Service
-from model.price_strategy import PriceStrategy
 from model.preco_normal import PrecoNormal
 from model.servicefactory import ServiceFactory
 
